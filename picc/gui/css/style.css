@@ -1,5 +1,4 @@
 .start-screen {
-  position: relative;
   padding-bottom: 20px;
 }
 .start-screen-title {
@@ -60,3 +59,13 @@
     #bg-picker{
     padding:15px;
     }
+#amiibo-gallery{
+    padding: 20px 50px;
+    height: 100%;
+    }
+    .amiibo{
+      position relative;
+      top:0px;
+      z-index:90;
+
+      }

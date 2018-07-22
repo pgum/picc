@@ -1,6 +1,6 @@
 {
   "rows": [
-    {"cells":[
+    [
       {
         "type": "bg-pick",
         "img": "img/tiles/charjabug.png",
@@ -19,8 +19,8 @@
         "text": "Litten",
         "p": "Purr purr"
       }
-    ]},
-    {"cells":[
+    ],
+    [
       {
         "type": "bg-pick",
         "img": "img/tiles/minior.png",
@@ -39,8 +39,8 @@
         "text": "Ninetales",
         "p": "Majestic"
       }
-    ]},
-    {"cells":[
+    ],
+    [
       {
         "type": "bg-pick",
         "img": "img/tiles/rowlet.png",
@@ -57,6 +57,6 @@
         "type": "description",
         "p": "Choose your background"
       }
-    ]}
+    ]
   ]
 }

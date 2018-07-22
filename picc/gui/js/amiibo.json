@@ -1,0 +1,24 @@
+{
+  "amiibo": [
+    {
+      "name": "Dog and Duck",
+      "img": "duck.png"
+    },
+    {
+      "name": "Kirby",
+      "img": "kirby.png"
+    },
+    {
+      "name": "Mario",
+      "img": "mario.png"
+    },
+    {
+      "name": "Mewtwo",
+      "img": "mewtwo.png"
+    },
+    {
+      "name": "Pikachu",
+      "img": "pikachu.png"
+    }
+  ]
+}

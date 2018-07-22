@@ -5,91 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/flipclock.css">
     <link href="./metro/css/metro-all.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/socket.io.js"></script>
     <script type="text/javascript" src="js/flipclock.js"></script>
     <script src="./metro/js/metro.js"></script>
-    <script>
-    Metro.session.setKey('command-center');
-    var defaultBG= 'eevee.png';
-    </script>
-   
-
     <title>GUI</title>
 </head>
 <body class="bg-dark fg-white">
 <script>
-function moj_test(){console.log("moj test!");}
-function bg_picker_open(){
-  $('.bg-pick').removeClass('selected');
-  $('.bg-pick').find('img[src="img/tiles/'+Metro.session.getItem('bg', defaultBG)+'"]').parent().addClass('selected');
-}
 </script>
+<script src="js/app.js"></script>
 
   <div id="left-side">
     <div class="bg-amber fg-black left-side" id="amiibo-gallery" data-role="dropdown" data-toggle-element="#amiibo">
+
     </div>
     <div class="bg-steel fg-white left-side" id="bg-picker" data-role="dropdown" data-toggle-element="#utils" data-duration="600" data-on-up="moj_test()" data-on-drop="bg_picker_open()">
-      <div class="grid">
-        <div class="row">
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/charjabug.png"/>
-              <div class="image-overlay"><h4 class="text-light">Charjabug</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/eevee.png"/>
-              <div class="image-overlay"><h4 class="text-light">Eevee</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-          
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/litten.png"/>
-              <div class="image-overlay"><h4 class="text-light">Litten</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-          </div>
-        <div class="row">
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/minior.png"/>
-              <div class="image-overlay"><h4 class="text-light">Minior</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/mimikyu.png"/>
-              <div class="image-overlay"><h4 class="text-light">Mimikyu</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/ninetales.png"/>
-              <div class="image-overlay"><h4 class="text-light">Ninetales</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/rowlet.png"/>
-              <div class="image-overlay"><h4 class="text-light">Rowlet</h4><p>Change to this pokemon</p></div>
-            </div>          
-          </div>
-          <div class="cell">
-            <div class="img-container bg-pick">
-              <img src="img/tiles/salazzle.png"/>
-              <div class="image-overlay"><h4 class="text-light">Salazzle</h4><p>Change to this pokemon</p></div>
-            </div>
-          </div>
-          <div class="cell"><p>Choose your background</p></div>
-        </div>
-      </div>
     </div>
-  </div>  
+  </div>
   <div id="clock"></div>
   <div class="start-screen">
     <div class="tiles-area">
@@ -102,20 +36,26 @@ function bg_picker_open(){
         <div data-role="tile" class="bg-blue fg-white" data-size="small" id="utils" data-action="utils">
           <span class="mif-tools icon"></span>
         </div>
-        <div data-role="tile" class="bg-mauve fg-white" data-size="small"  class="bg-cyan" data-action="refresh">
+        <div data-role="tile" class="bg-mauve fg-white" data-size="small" data-action="refresh">
           <span class="mif-spinner4 icon"></span>
         </div>
-        <div data-role="tile" class="bg-mauve fg-white" data-size="small"  class="bg-cyan" data-action="refresh">
-          <span class="mif-spinner4 icon"></span>
+        <div data-role="tile" class="bg-yellow fg-white" data-size="small" id="amiibo" data-action="amiibo">
+          <span class="mif-magic-wand icon"></span>
         </div>
       </div>
     </div>
   </div>
   <div id="background-layer">
-    <img id="background" src='img/bg/eevee.png'/>
+    <img id="background" src=''/>
   </div>  
   
-    
-<script src="js/app.js"></script>
+<script src="js/tiles.js"></script>
+<script>
+  namespace = '/test';
+  var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+  socket.on('my_response', function(msg) {
+    console.log('Received #' + msg.count + ': ' + msg.data);
+  });
+  </script>
 </body>
 </html>
