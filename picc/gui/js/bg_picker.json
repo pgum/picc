@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {"cells":[
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/charjabug.png",
+        "text": "Charjabug",
+        "p": "Char char!"
+      },
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/eevee.png",
+        "text": "Eevee",
+        "p": "Cutest of all 1st gen!"
+      },
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/litten.png",
+        "text": "Litten",
+        "p": "Purr purr"
+      }
+    ]},
+    {"cells":[
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/minior.png",
+        "text": "Minior",
+        "p": "Happy meteor"
+      },
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/mimikyu.png",
+        "text": "Mimikyu",
+        "p": "I want to be your friend"
+      },
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/ninetales.png",
+        "text": "Ninetales",
+        "p": "Majestic"
+      }
+    ]},
+    {"cells":[
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/rowlet.png",
+        "text": "Rowlet",
+        "p": "Owl with style"
+      },
+      {
+        "type": "bg-pick",
+        "img": "img/tiles/salazzle.png",
+        "text": "Salazzle",
+        "p": "Queen"
+      },
+      {
+        "type": "description",
+        "p": "Choose your background"
+      }
+    ]}
+  ]
+}
