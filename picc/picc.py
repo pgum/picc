@@ -9,11 +9,11 @@ app.config.from_mapping(
   DATABASE= os.path.join(app.instance_path, 'picc.sqlite'),
   )
 async_mode=None
+app.config.from_pyfile('config.py', silent=True)
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
 
-app.config.from_pyfile('config.py', silent=True)
 
 try:
   os.makedirs(app.instance_path)
@@ -52,5 +52,8 @@ def test_connection():
       thread = socketio.start_background_task(target=background_thread)
   emit('my_response', {'data': 'Connected', 'count':0})
 
-if __name__ == '__main__':
+def run():
   socketio.run(app, host='0.0.0.0', debug=True)
+
+if __name__ == '__main__':
+  run()
