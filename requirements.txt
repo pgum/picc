@@ -9,7 +9,7 @@ idna==2.7
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
-python-engineio==2.2.0
+python-engineio==3.8.2.post1
 python-socketio==2.0.0
 requests==2.19.1
 six==1.11.0
